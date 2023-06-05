@@ -1,0 +1,58 @@
+<div class="main-container">
+  <mat-card-title class="title-div">Locations Questions</mat-card-title>
+</div>
+<mat-divider></mat-divider>
+<div class="btn-style">
+  <button mat-button (click)="openDialog()">Add Card</button>
+</div>
+
+<div class="main-div">
+  <div class="card-div">
+    <div>
+      <app-show-card
+        [cardData]="cardData"
+        city="Lahore"
+        (clickOnCard)="clickOnCard($event)"
+      ></app-show-card>
+    </div>
+  </div>
+  <div class="card-div">
+    <div>
+      <app-show-card
+        [cardData]="cardData"
+        city="Multan"
+        (clickOnCard)="clickOnCard($event)"
+      ></app-show-card>
+    </div>
+  </div>
+
+  <div class="card-div">
+    <div>
+      <app-show-card
+        [cardData]="cardData"
+        city="Kaisten"
+        (clickOnCard)="clickOnCard($event)"
+      ></app-show-card>
+    </div>
+  </div>
+
+  <div class="card-div">
+    <div>
+      <app-show-card
+        [cardData]="cardData"
+        city="Muenster"
+        (clickOnCard)="clickOnCard($event)"
+      ></app-show-card>
+    </div>
+  </div>
+
+  <div class="card-div">
+    <div>
+      <app-show-card
+        [cardData]="cardData"
+        city="Rubi"
+        (clickOnCard)="clickOnCard($event)"
+      ></app-show-card>
+    </div>
+  </div>
+</div>

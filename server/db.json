@@ -1,0 +1,36 @@
+{
+  "Tickets": [
+    {
+      "infoData": {
+        "name": "hello",
+        "description": "world"
+      },
+      "questionData": {
+        "lahore": [
+          "yes",
+          "no"
+        ],
+        "multan": [
+          "no",
+          "yes"
+        ],
+        "kaisten": [
+          "no",
+          "yes"
+        ],
+        "muenster": [
+          "no",
+          "yes"
+        ],
+        "rubi": [
+          "no",
+          "yes"
+        ]
+      },
+      "locationData": {
+        "location": "Muenster"
+      },
+      "id": 1
+    }
+  ]
+}

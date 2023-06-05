@@ -1,0 +1,223 @@
+<div mat-dialog-content>
+  <p>Add Location Card</p>
+  <mat-stepper [linear]="isLinear" #stepper>
+    <mat-step>
+      <form [formGroup]="infoFormGroup">
+        <ng-template matStepLabel>Info</ng-template>
+        <div
+          style="
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+          "
+        >
+          <mat-form-field appearance="fill" style="margin-right: 15px">
+            <mat-label>Name</mat-label>
+            <input
+              matInput
+              placeholder="Enter Name"
+              formControlName="name"
+              required
+            />
+          </mat-form-field>
+          <br />
+          <ng-template matStepLabel>Enter Description</ng-template>
+          <mat-form-field appearance="fill">
+            <mat-label>Description</mat-label>
+            <input
+              matInput
+              placeholder="Enter Description"
+              formControlName="description"
+              required
+            />
+          </mat-form-field>
+        </div>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step label="Questions">
+      <div appearance="fill">
+        <mat-card-title style="margin-top: 10px"
+          >Lahore Questions</mat-card-title
+        >
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0px;
+          "
+          *ngFor="let value of lahoreQuestions; let i = index"
+        >
+          <mat-label>{{ value }}</mat-label>
+          <mat-radio-group
+            aria-labelledby="example-radio-group-label"
+            class="example-radio-group"
+          >
+            <mat-radio-button
+              class="example-radio-button"
+              [checked]="getChecked('lahore', i, answer.label)"
+              (change)="updateForm('lahore', i, answer.label)"
+              style="margin-right: 5px"
+              *ngFor="let answer of answers"
+              [value]="answer.label"
+            >
+              {{ answer.label }}
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+
+      <div appearance="fill">
+        <mat-card-title style="margin-top: 10px"
+          >Multan Questions</mat-card-title
+        >
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0px;
+          "
+          *ngFor="let value of multanQuestions; let i = index"
+        >
+          <mat-label>{{ value }}</mat-label>
+          <mat-radio-group
+            aria-labelledby="example-radio-group-label"
+            class="example-radio-group"
+          >
+            <mat-radio-button
+              class="example-radio-button"
+              [checked]="getChecked('multan', i, answer.label)"
+              (change)="updateForm('multan', i, answer.label)"
+              style="margin-right: 5px"
+              *ngFor="let answer of answers"
+              [value]="answer.label"
+            >
+              {{ answer.label }}
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+
+      <div appearance="fill">
+        <mat-card-title style="margin-top: 10px"
+          >Kaisten Questions</mat-card-title
+        >
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0px;
+          "
+          *ngFor="let value of kaistenQuestions; let i = index"
+        >
+          <mat-label>{{ value }}</mat-label>
+          <mat-radio-group
+            aria-labelledby="example-radio-group-label"
+            class="example-radio-group"
+          >
+            <mat-radio-button
+              class="example-radio-button"
+              [checked]="getChecked('kaisten', i, answer.label)"
+              (change)="updateForm('kaisten', i, answer.label)"
+              style="margin-right: 5px"
+              *ngFor="let answer of answers"
+              [value]="answer.label"
+            >
+              {{ answer.label }}
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+
+      <div appearance="fill">
+        <mat-card-title style="margin-top: 10px"
+          >Muenster Questions</mat-card-title
+        >
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0px;
+          "
+          *ngFor="let value of muensterQuestions; let i = index"
+        >
+          <mat-label>{{ value }}</mat-label>
+          <mat-radio-group
+            aria-labelledby="example-radio-group-label"
+            class="example-radio-group"
+          >
+            <mat-radio-button
+              class="example-radio-button"
+              [checked]="getChecked('muenster', i, answer.label)"
+              (change)="updateForm('muenster', i, answer.label)"
+              style="margin-right: 5px"
+              *ngFor="let answer of answers"
+              [value]="answer.label"
+            >
+              {{ answer.label }}
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+
+      <div appearance="fill">
+        <mat-card-title style="margin-top: 10px">Rubi Questions</mat-card-title>
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0px;
+          "
+          *ngFor="let value of rubiQuestions; let i = index"
+        >
+          <mat-label>{{ value }}</mat-label>
+          <mat-radio-group
+            aria-labelledby="example-radio-group-label"
+            class="example-radio-group"
+          >
+            <mat-radio-button
+              class="example-radio-button"
+              [checked]="getChecked('rubi', i, answer.label)"
+              (change)="updateForm('rubi', i, answer.label)"
+              style="margin-right: 5px"
+              *ngFor="let answer of answers"
+              [value]="answer.label"
+            >
+              {{ answer.label }}
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+
+    <mat-step label="Locations">
+      <form [formGroup]="locationFormGroup">
+        <mat-form-field appearance="fill" style="margin-top: 20px">
+          <mat-label>Address</mat-label>
+          <mat-select formControlName="location">
+            <mat-option *ngFor="let city of Cities" [value]="city">
+              {{ city }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button *ngIf="!editCardData" mat-button (click)="submitBtn()">
+            Submit
+          </button>
+          <button *ngIf="editCardData" mat-button (click)="updateBtn()">
+            Update
+          </button>
+        </div>
+      </form>
+    </mat-step>
+  </mat-stepper>
+</div>

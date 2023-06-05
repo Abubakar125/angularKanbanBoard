@@ -1,0 +1,42 @@
+.example-card {
+  max-width: 400px;
+  margin-bottom: 8px;
+}
+
+.main-div {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 50px;
+}
+
+.card-div {
+  width: 18%;
+  display: flex;
+  justify-content: center;
+  height: fit-content;
+}
+
+.card-div div {
+  background-color: #dcdcdc;
+  width: 100%;
+}
+
+.btn-style {
+  margin: 10px 0px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-style button {
+  background-color: rgb(224, 224, 224);
+  color: black;
+}
+
+.title-div {
+  display: flex;
+  justify-content: center;
+}
+
+.main-container {
+  margin: 30px 0px;
+}
